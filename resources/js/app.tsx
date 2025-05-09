@@ -10,6 +10,8 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx')),
+    //hydrate navigateion, with the server side used the Lavarel Router.
+    // Client side used the Inertia Router.
     setup({ el, App, props }) {
         const root = createRoot(el);
 

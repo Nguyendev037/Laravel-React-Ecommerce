@@ -15,6 +15,8 @@ createServer((page) =>
         setup: ({ App, props }) => {
             /* eslint-disable */
             // @ts-expect-error
+            //hydrate navigateion, with the server side used the Lavarel Router.
+            // Client side used the Inertia Router.
             global.route<RouteName> = (name, params, absolute) =>
                 route(name, params as any, absolute, {
                     // @ts-expect-error
